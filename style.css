@@ -1,0 +1,505 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: #fff;
+    font-size: 1.6rem;
+    font-weight: 541;
+    line-height: 1.5;
+
+}
+
+:root {
+    --light-green: #9DD991;
+    --dark-green: #007A6D;
+    --dark-blue: #1f346d;
+    --white: #fff;
+    --dark: #000
+}
+
+.container {
+    padding: 0 10rem 0 10rem;
+    margin: 0 auto 0 auto;
+    width: 100%;
+}
+
+.col {
+    float: left;
+    width: 100%;
+    padding: 1rem;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.image-fluid {
+    max-width: 100%;
+}
+
+.btn {
+    font-family: 'Kanit', sans-serif;
+    padding: 1.5rem;
+    display: inline-block;
+    font-weight: 541;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+a {text-decoration: none;}
+li {list-style-type: none;}
+
+/* navbar */
+
+nav {
+    background: var(--dark-blue);
+    padding: 2.5rem 0 2.5rem 0;
+    color: var(--white);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+#logo-box .logo {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+#logo-box {
+    float: left;
+}
+
+#nav-links {
+    float: right;
+}
+
+#nav-links .nav-item {
+    margin: 0 0 0 2.5rem;
+    float: left;
+}
+
+#nav-links .nav-item .nav-link {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    display: block;
+}
+
+#nav-links .nav-item .nav-link:hover,
+#nav-links .nav-item .nav-menu-icon:hover {
+    color: #9DD991;
+}
+
+#nav-links .nav-menu-icon {
+    display: none;
+}
+
+/* header */
+
+header {
+    padding: calc(107px + 15rem) 0 10rem 0;
+    background: #9DD991;
+    text-align: center;
+    line-height: 10rem;
+    font-family: "New Amsterdam", sans-serif;
+}
+
+#profile-image {
+    border-radius: 30%;
+    width: 30rem;
+}
+
+header h1 {
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: var(--white);
+    font-size: 9rem;
+}
+
+header h2 {
+    letter-spacing: .3rem;
+    color: var(--white);
+    font-weight: 300;
+    font-size: 2.3rem;
+    line-height: 3.3rem;
+}
+
+hr.star-dark {
+    border-color: var(--dark-blue);
+}
+
+hr.star-light {
+    border-color: var(--white);
+}
+
+.star-light, .star-dark {
+    border: none;
+    border-top: .5rem solid;
+    margin: 5rem auto;
+    max-width: 30rem;
+    overflow: visible;
+    height: 0;
+}
+
+.star-light::after {
+    color: var(--white);
+    background: var(--light-green);
+    top: -5.5rem;
+}
+
+.star-dark::after {
+    color: var(--dark-blue);
+    background: var(--white);
+    top: -3rem;
+}
+
+.star-light::after, 
+.star-dark::after {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 3.5rem;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* portfolio */
+
+#portfolio {
+    padding: 10rem 0;
+    text-align: center;
+} 
+
+#portfolio h2 {
+    font-size: 4.5rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+
+
+.portfolio-item {
+    position: relative;
+}
+
+.portfolio-item img {
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-blue);
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.image-overlay .icon {
+    color: var(--white);
+    font-size: 4rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.portfolio-item:hover
+.image-overlay {
+    opacity: 0.9;
+}
+
+
+:where(.portfolio-item img, .image-overlay) {
+    border-radius: 10px;
+}
+
+/* about */
+
+#about {
+    font-family: "New Amsterdam", sans-serif;
+    padding: 10rem 0;
+    text-align: center;
+    background: var(--light-green);
+    color: var(--white);
+}
+
+#about h2 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    height: 7rem;
+}
+
+#about .star-light::after {
+    top: -3rem;
+}
+
+#about-text {
+    text-align: left;
+}
+
+#about-text .left {
+    float: none;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#about-text .right {
+    float: none;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#about-text .text {
+    letter-spacing: .3rem;
+    color: var(--white);
+    font-weight: 300;
+    font-size: 2.3rem;
+    line-height: 3.3rem;   
+}
+
+.btn-download {
+    background: transparent;
+    border-radius: 1rem;
+    color: var(--white);
+    border: .3rem solid white;
+    font-size: 2.3rem;
+    margin-top: 7rem;
+    transition: .3s ease;
+}
+
+.btn-download:hover {
+    background: var(--white);
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+/* contact us */
+
+#contact_us {
+    padding: 10rem 0;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+#contact_us h2 {
+    font-size: 4.5rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+
+#contact-form {
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 1rem;
+    margin-bottom: 7rem;
+}
+
+.form-group input,
+.form-group  textarea {
+    border: none;
+    width: 100%;
+    display: block;
+    resize: vertical;
+    font-size: 2.4rem;
+    min-height: 4rem;
+    max-height: 50rem;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+}
+
+.btn-send {
+    border-radius: 1rem;
+    color: var(--dark-blue);
+    border: .3rem solid var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: 541;
+    padding: .5rem 2rem;
+    transition: .2s ease;
+}
+
+.btn-send:hover {
+    background: var(--light-green);
+    border-color: var(--dark-green);
+    color: var(--white);
+}
+
+/* footer */
+
+footer {
+    background: var(--dark-blue);
+    width: 100%;
+    padding: 7rem 0;
+    text-align: center;
+    color: var(--white);
+}
+
+footer .col h4 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+footer .col p {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+#social-media-buttons {
+    margin-top: 2rem;
+}
+
+#social-media-buttons li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.btn-social-media {
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--dark);
+    width: 5.2rem;
+    height: 5.2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--dark-blue);
+    transition: .2s ease;
+}
+
+.btn-social-media:hover {
+    color: var(--white);
+    background: var(--light-green);
+}
+
+/* copyright */
+
+.copyright {
+    background: var(--dark);
+    padding: 2.4rem 0;
+    color: var(--white);
+    text-align: center;
+}
+
+/* responsive */
+
+@media (min-width: 576px) {
+    html {
+        font-size: 7px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 8px;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .col {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 9px;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+    .col {
+        width: 33%;
+    }
+
+    #about-text .left {
+        float: left;
+        width: 48%;
+        margin-bottom: 0;
+    }
+    
+    #about-text .right {
+        float: right;
+        width: 48%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    #nav-links .nav-menu-icon {
+        display: block;
+        font-size: 5rem;
+        color: var(--white);
+        position: absolute;
+        top: 10px;
+        right: 10rem;
+    }
+
+    #logo-box {
+        float: none;
+    }
+    
+    #nav-links {
+        float: none;
+    }
+
+    #nav-links .nav-item {
+        float: none;
+        margin: 0;
+    }
+
+    #nav-links .nav-item .nav-link {
+        padding: 1rem 0 1rem 0;
+    }
+
+    #nav-links.responsive li:not(:first-child) {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+}
